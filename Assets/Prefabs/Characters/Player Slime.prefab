@@ -308,7 +308,6 @@ GameObject:
   - component: {fileID: 752675843007659094}
   - component: {fileID: 3220859680273176737}
   - component: {fileID: 2816499777913638533}
-  - component: {fileID: 305273789}
   m_Layer: 0
   m_Name: Player Slime
   m_TagString: Player
@@ -423,7 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   dashSpeed: 10
-  rollSpeed: 19
+  rollSpeed: 22
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -504,22 +503,6 @@ MonoBehaviour:
   playerMaxHealth: 100
   playerCurrentHealth: 100
   flashLength: 0.2
---- !u!114 &305273789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4003553222182483638}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01514e4efde60734db332c8d5a29ec7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 6503197361191483936, guid: 5a2d7966f2480c444bdbec14556d814e, type: 3}
-  endPointPosition: {fileID: 9068887456420887096}
-  bowAttackTime: 0.62
-  rangedWeaponEquiped: 1
 --- !u!1 &7531673512996074628
 GameObject:
   m_ObjectHideFlags: 0
