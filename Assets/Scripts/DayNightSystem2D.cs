@@ -95,7 +95,7 @@ public class DayNightSystem2D : MonoBehaviour
             foreach (GameObject plant in plants) {
                 plant.gameObject.SetActive(false);
             }
-            enemies.gameObject.SetActive(true);
+            enemies.gameObject?.SetActive(true);
         }
     }
 

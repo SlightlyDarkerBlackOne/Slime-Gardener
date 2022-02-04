@@ -72,7 +72,7 @@ public class PlayerHealthManager : MonoBehaviour, HealthManager
 
     public void Hurt(int damageToGive) {
         playerCurrentHealth -= damageToGive;
-        OnCurrentHealthChange.Invoke(playerCurrentHealth);
+        OnCurrentHealthChange?.Invoke(playerCurrentHealth);
 
         SFXManager.Instance.PlaySound(SFXManager.Instance.playerHurt);
         this.GetComponent<CameraShakePlayer>().ShakeOnHit();

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 706570570}
   - component: {fileID: 1285168853}
   - component: {fileID: 1285168854}
+  - component: {fileID: 1743504973}
   m_Layer: 0
   m_Name: EnemyShooter
   m_TagString: Enemy
@@ -93,7 +94,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4391954409329769220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3c2d8ed32244fb45bd8f66118eefe74, type: 3}
   m_Name: 
@@ -114,7 +115,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4391954409329769220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3356b4032db96ee4499067d85c07310a, type: 3}
   m_Name: 
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4391954409329769220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -154,10 +155,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4391954409329769220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12ca5856cf54eeb418215b3aabb81a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explodeEffect: {fileID: 194062, guid: f29e37b42386d03469d064b70bc534b7, type: 3}
   drop: {fileID: 6727453812973136408, guid: d74da81e2e856504c96e3b1b7fe64680, type: 3}
+--- !u!114 &1743504973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391954409329769220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6bef893cfb9e234389dec9fb96e9615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletsAmount: 12
+  startAngle: 0
+  endAngle: 360
