@@ -27,12 +27,14 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        SFXManager.Instance.PlaySound(SFXManager.Instance.uiButtons[0]);
     }
 
     private void Resume() {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        SFXManager.Instance.PlaySound(SFXManager.Instance.uiButtons[1]);
     }
 
     public void LoadMenu() {

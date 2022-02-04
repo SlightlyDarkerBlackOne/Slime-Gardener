@@ -20,7 +20,7 @@ public class EnemyHealthManager : MonoBehaviour, HealthManager
         if (CurrentHealth <= 0) {
             OnEnemyDeath?.Invoke(this, EventArgs.Empty);
             gameObject.SetActive(false);
-            //Destroy(gameObject);
+            Destroy(gameObject);
             SFXManager.Instance.PlaySound(SFXManager.Instance.enemyDead);
         }
     }

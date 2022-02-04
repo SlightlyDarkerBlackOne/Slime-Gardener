@@ -2,40 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class BaseProjectile : MonoBehaviour
 {
-    public float speed;
+    public string tag;
+    public GameObject destroyEffect;
+    public GameObject missEffect;
+    public bool isEnemyObject;
+
     public int damageToGive;
     public int critChance;
     public int critMultiplier;
     private int currentDamage;
-
-    public GameObject destroyEffect;
-    public GameObject missEffect;
-    public bool isEnemyObject;
-    public string tag;
-    
-    private Transform player;
-    private Vector2 target;
-
-    public float mineDestroyTime = 5f;
-
-    public bool projectileRotation;
-
-
-    private void Start() {
-        player = PlayerController2D.Instance.transform;
-        target = new Vector2(player.position.x, player.position.y);
-        if (projectileRotation) {
-            transform.LookAt(player.transform);
-        }
-        StartCoroutine(DestroyMe());
-    }
-
-    private void Update() {
-        if(tag == "Player")
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag(tag)) {
@@ -43,7 +20,6 @@ public class Projectile : MonoBehaviour
             collision.gameObject.GetComponent<HealthManager>().Hurt(DamageCalculation());
         }
     }
-
     private void DestroyProjectile(Collider2D collision) {
 
         //PlaySound
@@ -52,14 +28,7 @@ public class Projectile : MonoBehaviour
             Destroy(effect, 3f);
         }
         if (isEnemyObject != true)
-            Destroy(gameObject);
-    }
-    IEnumerator DestroyMe() {
-        yield return new WaitForSeconds(mineDestroyTime);
-        GameObject effect = Instantiate(missEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 3f);
-        yield return null;
-        Destroy(this.gameObject);
+            gameObject.SetActive(false);
     }
 
     public int DamageCalculation() {
