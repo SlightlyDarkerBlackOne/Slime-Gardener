@@ -64,11 +64,7 @@ public class DayNightSystem2D : MonoBehaviour
         cycleCurrentTime += Time.deltaTime;
 
         if(cycleCurrentTime >= cycleMaxTime) {
-            if(dayCycle == DayCycles.Day) {
-                SFXManager.Instance.PlayAtmosphere();
-            }
-            cycleCurrentTime = 0; // back to 0 (restarting cycle time)
-            dayCycle=DayCycles.Night; // change cycle state
+            StartNight();
         }
 
         // Mid Day state
@@ -95,7 +91,7 @@ public class DayNightSystem2D : MonoBehaviour
             foreach (GameObject plant in plants) {
                 plant.gameObject.SetActive(false);
             }
-            enemies.gameObject?.SetActive(true);
+            enemies?.gameObject.SetActive(true);
         }
     }
 
@@ -114,5 +110,13 @@ public class DayNightSystem2D : MonoBehaviour
                     i++;
                 }
             }
+    }
+
+    public void StartNight() {
+        if (dayCycle == DayCycles.Day) {
+            SFXManager.Instance.PlayAtmosphere();
+        }
+        cycleCurrentTime = 0; // back to 0 (restarting cycle time)
+        dayCycle = DayCycles.Night; // change cycle states
     }
 }
