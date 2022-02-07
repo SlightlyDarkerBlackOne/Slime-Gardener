@@ -113,10 +113,6 @@ public class DayNightSystem2D : MonoBehaviour
     }
 
     public void StartNight() {
-        if (dayCycle == DayCycles.Day) {
-            SFXManager.Instance.PlayAtmosphere();
-        }
-        cycleCurrentTime = 0; // back to 0 (restarting cycle time)
-        dayCycle = DayCycles.Night; // change cycle states
+        dayCycle = DayCycles.Night;
     }
 }

@@ -2,12 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject loadMenuUI;
+    public GameObject loseScreenUI;
     public static bool GameIsPaused;
 
+    private void Start() {
+        PlayerHealthManager.Instance.OnPlayerDead += Pause;
+        PlayerHealthManager.Instance.OnPlayerDead += ShowLoseScreen;
+    }
     // Update is called once per frame
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -43,5 +49,12 @@ public class PauseMenu : MonoBehaviour
     }
     private void QuitGame() {
         Application.Quit();
+    }
+    private void ShowLoseScreen() {
+        loseScreenUI.gameObject.SetActive(true);
+        SFXManager.Instance.StopSoundTrack();
+    }
+    public void PlayAgain() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

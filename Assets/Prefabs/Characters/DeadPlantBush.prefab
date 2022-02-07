@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3053613077096541351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.2, y: 3.6, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5685286, y: 0.13926563}
-    oldSize: {x: 1.57, y: 1.8333334}
+    oldSize: {x: 4.71, y: 5.5}
     newSize: {x: 1.57, y: 1.8333334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68be0864de69bbb44b6d47aed4cef785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 1
+  MaxHealth: 7
   CurrentHealth: 0
   flashLength: 0.2
   aliveSprite: {fileID: 21300000, guid: e8380c889f02f814790cff886ba291e5, type: 3}

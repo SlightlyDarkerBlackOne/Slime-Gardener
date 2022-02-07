@@ -17,6 +17,7 @@ public class PlayerHealthManager : MonoBehaviour, HealthManager
     private SpriteRenderer playerSprite;
 
     public event Action<float> OnCurrentHealthChange;
+    public event Action OnPlayerDead;
 
     #region Singleton
     public static PlayerHealthManager Instance { get; private set; }
@@ -64,8 +65,8 @@ public class PlayerHealthManager : MonoBehaviour, HealthManager
     }
     private void Dead() {
         SFXManager.Instance.PlaySound(SFXManager.Instance.playerDead);
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        OnPlayerDead?.Invoke();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         SetToMaxHealth();
     }

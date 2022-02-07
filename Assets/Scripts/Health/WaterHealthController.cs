@@ -57,7 +57,7 @@ public class WaterHealthController : MonoBehaviour, HealthManager {
         //change sprite
         playerSprite.sprite = aliveSprite;
         Vector3 tempScale = transform.localScale;
-        float scale = UnityEngine.Random.Range(1, 6);
+        float scale = UnityEngine.Random.Range(1, 4);
         transform.localScale = new Vector3(scale, scale, 1);
         Destroy(GetComponent<BoxCollider2D>());
         isAlive = false;

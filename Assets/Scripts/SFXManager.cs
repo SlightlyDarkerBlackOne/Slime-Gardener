@@ -61,10 +61,11 @@ public class SFXManager : MonoBehaviour
         source.Play();
         source.loop = true;
     }
-
     public void PlaySoundTrack(AudioSource source) {
-        //soundTrack.Stop();
-        PlayOnLoop(source);
+        source.Play();
+    }
+    public void StopSoundTrack() {
+        NightAtmosphere.Stop();
     }
     public void PlayAtmosphere() {
         if (DayAtmosphere.isPlaying) {
